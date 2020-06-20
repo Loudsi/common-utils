@@ -7,6 +7,3 @@ All contributions accepted.
 
 Special thanks to : 
  - Cloning Library : https://github.com/kostaskougios/cloning
-
-## Useful links ##
-  
