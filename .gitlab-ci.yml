@@ -1,0 +1,14 @@
+stages:
+  - build
+
+build:
+  stage: build
+  image: adoptopenjdk/openjdk11
+  script:
+    - export GRADLE_USER_HOME=`pwd`/.gradle
+    - echo start Build
+    - ./gradlew build
+  cache:
+    paths:
+      - .gradle/wrapper
+      - .gradle/caches
