@@ -8,6 +8,9 @@ build:
     - export GRADLE_USER_HOME=`pwd`/.gradle
     - echo start Build
     - ./gradlew build
+  artifacts:
+    reports:
+      junit: build/test-results/test/**/TEST-*.xml
   cache:
     paths:
       - .gradle/wrapper
