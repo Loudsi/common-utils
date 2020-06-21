@@ -1,7 +1,5 @@
 package org.loudsi.common.tree;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
-
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
@@ -43,6 +41,7 @@ public class Node<T> {
     public void addChildren(Collection<Node<T>> children) {
         children.forEach(this::addChild);
     }
+
     public void addChildrenData(Collection<T> childrenData) {
         childrenData.forEach(this::addChild);
     }
@@ -55,12 +54,10 @@ public class Node<T> {
         this.data = data;
     }
 
-    @JsonIgnore
     public boolean isRoot() {
         return (this.parent == null);
     }
 
-    @JsonIgnore
     public boolean isLeaf() {
         return this.children.size() == 0;
     }
@@ -68,6 +65,5 @@ public class Node<T> {
     public void removeParent() {
         this.parent = null;
     }
-
 
 }

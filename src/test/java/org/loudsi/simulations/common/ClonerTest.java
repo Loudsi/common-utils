@@ -1,7 +1,8 @@
-package org.loudsi.common;
+package org.loudsi.simulations.common;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
+import org.loudsi.common.Cloner;
 
 import java.util.Collection;
 import java.util.List;

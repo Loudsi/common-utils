@@ -2,8 +2,6 @@ package org.loudsi.common.tree;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
-import org.loudsi.common.tree.Node;
-import org.loudsi.common.tree.NodeHelper;
 
 import java.util.Comparator;
 import java.util.List;
