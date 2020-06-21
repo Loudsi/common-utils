@@ -8,7 +8,7 @@ build:
     - export GRADLE_USER_HOME=`pwd`/.gradle
     - echo start Build
     - ./gradlew build
-    - ./gradlew publish
+    - ./gradlew publish -P CI_TOKEN = $CI_JOB_TOKEN
   artifacts:
     reports:
       junit: build/test-results/test/**/TEST-*.xml
