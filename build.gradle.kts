@@ -29,7 +29,7 @@ publishing {
     repositories {
         maven {
             //url = uri("https://gitlab.com/api/v4/projects/19495568/packages/maven")
-            url = uri("https://gitlab.com/api/v4/groups/org.loudsi/-/packages/maven")
+            url = uri("https://gitlab.com/api/v4/groups/loudsi-group/-/packages/maven")
             credentials(HttpHeaderCredentials::class) {
                 name = "Job-Token"
                 value = CI_TOKEN
