@@ -1,4 +1,4 @@
-![Java CI with Gradle](https://github.com/Loudsi/common-utils/workflows/Java%20CI%20with%20Gradle/badge.svg?branch=master)
+![Build](https://github.com/Loudsi/common-utils/workflows/Build/badge.svg)
 
 ## Summary ##
 This library is a small, open source (Apache licensed) Java Utility library. 
