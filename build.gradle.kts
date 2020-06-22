@@ -3,7 +3,7 @@ plugins {
     id("maven-publish")
 }
 
-group = "org.loudsi"
+group = "org.loudsi.common"
 version = "1.0-SNAPSHOT"
 
 repositories {
@@ -20,24 +20,20 @@ dependencies {
 val CI_TOKEN: String ? by project
 
 publishing {
-
+    repositories {
+        maven {
+            name = "GitHubPackages"
+            url = uri("https://maven.pkg.github.com/Loudsi/common-utils")
+            credentials {
+                username = project.findProperty("gpr.user") as String? ?: System.getenv("USERNAME")
+                password = project.findProperty("gpr.key") as String? ?: System.getenv("TOKEN")
+            }
+        }
+    }
     publications {
-        create<MavenPublication>("maven") {
+        register("gpr") {
             from(components["java"])
         }
     }
-    repositories {
-        maven {
-            url = uri("https://gitlab.com/api/v4/projects/19495568/packages/maven")
-            credentials(HttpHeaderCredentials::class) {
-                name = "Job-Token"
-                value = CI_TOKEN
-            }
-            authentication {
-                create<HttpHeaderAuthentication>("header")
-            }
-        }
-    }
 }
-
 
