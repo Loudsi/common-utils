@@ -17,8 +17,6 @@ dependencies {
     testImplementation("org.junit.jupiter:junit-jupiter:5.4.2")
 }
 
-val CI_TOKEN: String ? by project
-
 publishing {
     repositories {
         maven {
@@ -31,7 +29,7 @@ publishing {
         }
     }
     publications {
-        register("gpr") {
+        create<MavenPublication>("maven") {
             from(components["java"])
         }
     }
