@@ -20,7 +20,7 @@ class NodeHelperTest {
     }
 
     @Test
-    void findMax() {
+    void findMaxInLeafs() {
         Node<Foo> fooNode = new Node<>(
                 new Foo(1),
                 List.of(
@@ -44,6 +44,11 @@ class NodeHelperTest {
         final Foo max = NodeHelper.findMax(fooNode, Comparator.comparing(Foo::getValue));
         Assertions.assertEquals(13D, max.getValue());
 
+
+    }
+
+    @Test
+    void findMaxInBranch(){
         Node<Foo> secondNode = new Node<>(
                 null,
                 List.of(
@@ -55,7 +60,7 @@ class NodeHelperTest {
                                         new Node<>(new Foo(0))
                                 )),
 
-                        new Node<>(new Foo(5),
+                        new Node<>(new Foo(20),
                                 List.of(
                                         new Node<>(new Foo(12)),
                                         new Node<>(new Foo(-2)),
@@ -63,10 +68,9 @@ class NodeHelperTest {
                                 ))
                 )
         );
-        final Foo secondMax = NodeHelper.findMax(fooNode, Comparator.comparing(Foo::getValue));
-        Assertions.assertEquals(13D, secondMax.getValue());
+        final Foo secondMax = NodeHelper.findMax(secondNode, Comparator.comparing(Foo::getValue));
+        Assertions.assertEquals(20D, secondMax.getValue());
     }
-
     @Test
     void getAllLeafs() {
 
