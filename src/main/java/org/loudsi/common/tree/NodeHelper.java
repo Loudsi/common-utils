@@ -35,23 +35,23 @@ public class NodeHelper {
         }
     }
 
-    public <T> List<Node<T>> getAllNodes(Node<T> node) {
+    public static <T> List<Node<T>> getAllNodes(Node<T> node) {
         if (node.isLeaf()) {
             return List.of(node);
         } else {
-            final List<Node<T>> collected = node.getChildren().stream().map(this::getAllNodes).flatMap(Collection::stream).collect(Collectors.toList());
+            final List<Node<T>> collected = node.getChildren().stream().map(NodeHelper::getAllNodes).flatMap(Collection::stream).collect(Collectors.toList());
             collected.add(node);
             return collected;
         }
     }
     //TODO REDO with lambda
-    public <T> Map<Integer, Integer> getChildrenByDepth(Node<T> node) {
+    public static <T> Map<Integer, Integer> getChildrenByDepth(Node<T> node) {
         HashMap<Integer, Integer> childrenByDepth = new HashMap<>();
         fillChildrenByDepth(node, childrenByDepth, 0);
         return childrenByDepth;
     }
 
-    private <T> void fillChildrenByDepth(Node<T> node, HashMap<Integer, Integer> childrenByDepth, int currentDepth) {
+    private static <T> void fillChildrenByDepth(Node<T> node, HashMap<Integer, Integer> childrenByDepth, int currentDepth) {
         if (currentDepth == 0) {
             childrenByDepth.put(0, 1);
         }
