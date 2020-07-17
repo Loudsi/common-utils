@@ -1,4 +1,5 @@
 ![Build](https://github.com/Loudsi/common-utils/workflows/Build/badge.svg)
+https://codebeat.co/projects/github-com-loudsi-common-utils-master
 
 ## Summary ##
 This library is a small, open source (Apache licensed) Java Utility library. 
